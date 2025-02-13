@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "fx_rates"
   spec.version       = FXRates::VERSION
   spec.authors       = ["Kevin Luo"]
-  spec.email         = ["kevin.luo@telus.com"]
+  spec.email         = ["kevin.luo@hey.com"]
 
   spec.summary       = %q{It is a wrapper gem for FXRatesAPI}
   spec.description   = %q{You can use this gem to call all APIs provided by FXRatesAPI with ease.}
