@@ -4,7 +4,6 @@ module FXRates
 
     def initialize
       @api_key = nil
-      @api_base_url = "https://api.fxratesapi.com"
     end
   end
 end
