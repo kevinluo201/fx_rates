@@ -6,5 +6,15 @@ loader.inflector.inflect(
 loader.setup
 
 module FXRates
-  # Your code goes here...
+  class Error < StandardError; end
+  class AuthenticationError < Error; end
+
+  class << self
+    attr_accessor :config
+
+    def configure
+      self.config ||= FXRates::Configuration.new
+      yield(config) if block_given?
+    end
+  end
 end
