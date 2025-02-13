@@ -1,3 +1,3 @@
-module FxRates
-  VERSION = "0.1.0"
+module FXRates
+  VERSION = "1.0.0"
 end

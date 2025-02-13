@@ -1,6 +1,10 @@
-require "fx_rates/version"
+require "zeitwerk"
+loader = Zeitwerk::Loader.for_gem
+loader.inflector.inflect(
+  "fx_rates" => "FXRates",
+)
+loader.setup
 
-module FxRates
-  class Error < StandardError; end
+module FXRates
   # Your code goes here...
 end
