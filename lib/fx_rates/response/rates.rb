@@ -1,5 +1,5 @@
-module FXRates
-  class RatesResponse
+module FXRates::Response
+  class Rates
     attr_reader :success, :rates, :timestamp, :date, :base, :raw_response
 
     def initialize(response)
