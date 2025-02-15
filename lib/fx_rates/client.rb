@@ -18,7 +18,7 @@ module FXRates
 
     def historical(**params)
       query = {}
-      query[:date] = (params[:date] || Time.now.utc).strftime('%Y-%m-%d')
+      query[:date] = date_params(params[:date] || Time.now.utc)
       query[:base] = params[:base] || 'USD'
       query[:currencies] = currencies_params(params[:currencies]) if params[:currencies]
       query[:amount] = params[:amount] || 1
@@ -65,6 +65,18 @@ module FXRates
     end
 
     private
+
+    def date_params(date)
+      if date.is_a?(String)
+        if !date.match?(/\d{4}-\d{2}-\d{2}/)
+          raise ArgumentError, "Invalid start_date format. Must be in the YYYY-MM-DD"
+        end
+
+        return date
+      end
+
+      date.strftime('%Y-%m-%d')
+    end
 
     def currencies_params(currencies)
       currencies.is_a?(Array) ? currencies.join(',') : nil
