@@ -1,4 +1,4 @@
-# FxRates
+# FXRates
 
 `fx_rates` is an API wrapper for https://fxratesapi.com/. I don't work for them. I just like their service very much, so I made this gem to let rubists access their service easier.
 
